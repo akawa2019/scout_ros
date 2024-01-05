@@ -50,7 +50,7 @@ int main(int argc, char **argv) {
     // instantiate a robot object
     std::shared_ptr<ScoutRobot> robot;
 
-    ProtocolDetector detector;
+    ProtocolDectctor detector;
     if (detector.Connect(port_name)) {
       auto proto = detector.DetectProtocolVersion(5);
       if (proto == ProtocolVersion::AGX_V1) {
@@ -95,7 +95,7 @@ int main(int argc, char **argv) {
     // instantiate a robot object
     std::shared_ptr<ScoutMiniOmniRobot> robot;
 
-    ProtocolDetector detector;
+    ProtocolDectctor detector;
     detector.Connect(port_name);
     auto proto = detector.DetectProtocolVersion(5);
     if (proto == ProtocolVersion::AGX_V1) {
